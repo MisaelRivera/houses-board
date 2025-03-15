@@ -2,8 +2,17 @@
     import { computed } from 'vue';
     const props = defineProps({
         price: [Number, String],
-        currency: String,
-        country: String,
+
+        currency: {
+            type: String,
+            default: 'USD'
+        },
+
+        country: {
+            type: String,
+            default: 'en-US'
+        },
+        
         digits: {
             type: [Number, String],
             default: 2,

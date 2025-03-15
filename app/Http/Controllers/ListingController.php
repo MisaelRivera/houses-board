@@ -15,7 +15,8 @@ class ListingController extends Controller
      */
     public function index()
     {
-        $listings = Listing::all();
+        $listings = Listing::orderByDesc('created_at')
+            ->paginate(10);
         return Inertia::render('Listing/Index', [
             'listings' => $listings
         ]);
